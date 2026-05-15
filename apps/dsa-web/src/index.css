@@ -2184,6 +2184,103 @@ textarea {
   background: var(--settings-skeleton-soft);
 }
 
+.brand-mark-shell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid hsl(var(--primary) / 0.34);
+  background:
+    radial-gradient(circle at 30% 30%, hsl(var(--primary) / 0.32), transparent 34%),
+    radial-gradient(circle at 72% 68%, hsl(247 84% 72% / 0.24), transparent 38%),
+    linear-gradient(145deg, hsl(var(--card) / 0.96), hsl(var(--background) / 0.88));
+  box-shadow:
+    inset 0 1px 0 hsl(0 0% 100% / 0.12),
+    0 14px 30px hsl(var(--primary) / 0.18),
+    0 0 0 1px hsl(var(--primary) / 0.06);
+  isolation: isolate;
+}
+
+.brand-mark-grid,
+.brand-mark-ring,
+.brand-mark-scan {
+  pointer-events: none;
+  position: absolute;
+}
+
+.brand-mark-grid {
+  inset: 0;
+  background:
+    linear-gradient(to right, hsl(var(--foreground) / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--foreground) / 0.05) 1px, transparent 1px);
+  background-size: 8px 8px;
+  mask-image: radial-gradient(circle at center, black 45%, transparent 100%);
+  opacity: 0.65;
+}
+
+.brand-mark-core {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 58%;
+  height: 58%;
+  border-radius: 9999px;
+  border: 1px solid hsl(var(--primary) / 0.4);
+  background:
+    radial-gradient(circle at 30% 30%, hsl(0 0% 100% / 0.22), transparent 30%),
+    linear-gradient(180deg, hsl(var(--primary) / 0.22), hsl(247 84% 72% / 0.2));
+  box-shadow:
+    inset 0 0 18px hsl(var(--primary) / 0.18),
+    0 0 22px hsl(var(--primary) / 0.2);
+}
+
+.brand-mark-letter {
+  font-family: "Segoe UI", "Arial Black", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: hsl(var(--foreground));
+}
+
+.brand-mark-ring {
+  border-radius: 9999px;
+  border: 1px solid hsl(var(--primary) / 0.24);
+}
+
+.brand-mark-ring-one {
+  inset: 15%;
+}
+
+.brand-mark-ring-two {
+  inset: 7%;
+  border-color: hsl(247 84% 72% / 0.2);
+}
+
+.brand-mark-scan {
+  inset: auto -20% 24% -20%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+  box-shadow: 0 0 18px hsl(var(--primary) / 0.6);
+  opacity: 0.9;
+}
+
+.brand-wordmark {
+  font-family: "Segoe UI", "Arial Black", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: hsl(var(--foreground));
+}
+
+.brand-subtitle {
+  margin-top: 0.2rem;
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", monospace;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-text) / 0.9);
+}
+
 .shell-page-frame {
   position: relative;
   overflow: hidden;
@@ -2192,6 +2289,44 @@ textarea {
 /* Touch action utilities */
 .touch-pan-y {
   touch-action: pan-y;
+}
+
+.shell-aurora {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  width: 34rem;
+  height: 34rem;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.38;
+}
+
+.shell-aurora-left {
+  top: -8rem;
+  left: -10rem;
+  background:
+    radial-gradient(circle, hsl(var(--primary) / 0.34) 0%, hsl(var(--primary) / 0.12) 40%, transparent 72%);
+}
+
+.shell-aurora-right {
+  right: -10rem;
+  bottom: -12rem;
+  background:
+    radial-gradient(circle, hsl(247 84% 72% / 0.28) 0%, hsl(247 84% 72% / 0.1) 42%, transparent 72%);
+}
+
+.shell-grid-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to right, hsl(var(--foreground) / 0.018) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--foreground) / 0.018) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at center, black 38%, transparent 95%);
+  opacity: 0.8;
 }
 
 .shell-page-frame::before {

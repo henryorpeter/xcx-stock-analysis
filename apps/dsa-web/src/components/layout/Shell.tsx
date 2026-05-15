@@ -34,6 +34,9 @@ export const Shell: React.FC<ShellProps> = ({ children }) => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <div className="shell-aurora shell-aurora-left" aria-hidden="true" />
+      <div className="shell-aurora shell-aurora-right" aria-hidden="true" />
+      <div className="shell-grid-overlay" aria-hidden="true" />
       <div className="pointer-events-none fixed inset-x-0 top-3 z-40 flex items-start justify-between px-3 lg:hidden">
         <button
           type="button"
@@ -48,12 +51,12 @@ export const Shell: React.FC<ShellProps> = ({ children }) => {
         </div>
       </div>
 
-      <div className="mx-auto flex min-h-screen w-full max-w-[1680px] px-3 py-3 sm:px-4 sm:py-4 lg:px-5">
+      <div className="relative mx-auto flex min-h-screen w-full max-w-[1680px] px-3 py-3 sm:px-4 sm:py-4 lg:px-5">
         <aside
           className={cn(
-            'sticky top-3 z-40 hidden shrink-0 overflow-visible rounded-[1.5rem] border border-[var(--shell-sidebar-border)] bg-card/72 p-2 shadow-soft-card backdrop-blur-sm transition-[width] duration-200 lg:flex',
+            'sticky top-3 z-40 hidden shrink-0 overflow-hidden rounded-[1.5rem] border border-[var(--shell-sidebar-border)] bg-card/72 p-3 shadow-soft-card backdrop-blur-sm transition-[width] duration-200 lg:flex',
             'max-h-[calc(100vh-1.5rem)] self-start sm:top-4 sm:max-h-[calc(100vh-2rem)]',
-            collapsed ? 'w-[64px]' : 'w-[116px]'
+            collapsed ? 'w-[72px]' : 'w-[clamp(13.5rem,15vw,15.5rem)]'
           )}
           aria-label="桌面侧边导航"
         >

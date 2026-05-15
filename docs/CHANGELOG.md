@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+- [改进] Web 工作台新增原创 IKUN 未来感品牌标识，并统一侧边栏、登录页与首页头图的品牌视觉与霓虹背景氛围。
+
 - [修复] 桌面端后端退出等待同时监听 `exit` 与 `close` 事件，并在子进程句柄关闭后清理全局引用，降低 Windows 下停止 Electron 时残留子进程导致的超时风险。
 - [文档] 更新桌面开发启动说明，`scripts/run-desktop.ps1` 默认使用 detached 方式启动 Electron，并补充 `-Wait` 前台模式用法。
 

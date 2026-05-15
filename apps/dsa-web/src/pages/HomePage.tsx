@@ -14,7 +14,7 @@ import { useNavigate } from 'react-router-dom';
 import { getParsedApiError, type ParsedApiError } from '../api/error';
 import { analysisApi } from '../api/analysis';
 import { systemConfigApi } from '../api/systemConfig';
-import { ApiErrorAlert, ConfirmDialog, Button, EmptyState, InlineAlert } from '../components/common';
+import { ApiErrorAlert, BrandMark, ConfirmDialog, Button, EmptyState, InlineAlert } from '../components/common';
 import { DashboardStateBlock } from '../components/dashboard';
 import { StockAutocomplete } from '../components/StockAutocomplete';
 import { HistoryList } from '../components/history';
@@ -560,14 +560,15 @@ const HomePage: React.FC = () => {
                     <div className="mb-3 flex flex-wrap items-center gap-2">
                       <span className="inline-flex items-center gap-2 rounded-full border border-cyan/25 bg-cyan/10 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.24em] text-cyan">
                         <RadioTower className="h-3.5 w-3.5" />
-                        Live Analysis Desk
+                        IKUN 信号甲板
                       </span>
                       <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-secondary">
-                        Daily Stock Analysis
+                        未来行情控制台
                       </span>
                     </div>
+                    <BrandMark subtitle="未来量化引擎" className="mb-4" />
                     <h1 className="text-2xl font-semibold tracking-tight text-foreground md:text-[2rem]">
-                      A 股最小可用分析驾驶舱
+                      IKUN 未来感股票分析驾驶舱
                     </h1>
                     <p className="mt-2 max-w-2xl text-sm leading-7 text-secondary">
                       先把 LLM 主渠道、Agent 渠道和自选股补齐，再开始首轮分析。这里直接告诉你现在缺什么、下一步去哪儿改、什么时候能开始试跑。
